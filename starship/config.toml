@@ -1,0 +1,9 @@
+[status]
+disabled = false
+pipestatus = true
+symbol = "×"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold green)"
+vicmd_symbol = "[❮](bold green)"

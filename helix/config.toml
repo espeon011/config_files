@@ -1,0 +1,8 @@
+theme = "ayu_dark"
+
+[editor]
+cursorline = true
+
+[editor.indent-guides]
+render = true
+character = "╎"
