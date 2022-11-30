@@ -1,16 +1,26 @@
+set -gx HOME (realpath $HOME)
+set -gx LANG "ja_JP.UTF-8"
+set -gx COLORTERM "truecolor"
+
 # homebrew
-eval (/opt/homebrew/bin/brew shellenv)
+switch (uname)
+case Darwin
+    eval (/opt/homebrew/bin/brew shellenv)
+    # llvm
+    fish_add_path --path "/opt/homebrew/opt/llvm/bin"
+    set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
+    set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+    set -gx LIBCLANG_PATH "/opt/homebrew/opt/llvm/lib"
+end
 
 # cargo
 fish_add_path --path "$HOME/.cargo/bin"
 
-# llvm
-fish_add_path "/opt/homebrew/opt/llvm/bin"
-set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
-set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+# gpg
+set -gx GPG_TTY (tty)
 
-# for GPG
-set -x GPG_TTY (tty)
+# default editor
+set -gx EDITOR "hx"
 
 # man on bat
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -18,16 +28,10 @@ set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
-    # vi キーバインド
+    # vi keybind
     fish_vi_key_bindings
 
-    # alias
-    alias ls='exa '
-    alias ll='exa --long --header --icons'
-    alias la='exa --long --header --all --icons'
-    alias tree='exa --tree --icons'
-
     # starship
-    set -x STARSHIP_CONFIG "$HOME/.config/starship/config.toml"
+    set -gx STARSHIP_CONFIG "$HOME/.config/starship/config.toml"
     starship init fish | source
 end
