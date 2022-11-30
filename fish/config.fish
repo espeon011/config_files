@@ -11,6 +11,13 @@ case Darwin
     set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
     set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
     set -gx LIBCLANG_PATH "/opt/homebrew/opt/llvm/lib"
+case Linux
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    # llvm
+    fish_add_path --path "/home/linuxbrew/.linuxbrew/opt/llvm/bin"
+    set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/llvm/lib"
+    set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/llvm/include"
+    set -gx LIBCLANG_PATH "/home/linuxbrew/.linuxbrew/opt/llvm/lib"
 end
 
 # cargo
