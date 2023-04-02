@@ -9,4 +9,4 @@ error_symbol = "[❯](bold green)"
 vicmd_symbol = "[❮](bold green)"
 
 [c]
-commands = [["clang", "--version"], ["cc", "--version"], ["gcc", "--version"]]
+commands = [["clang", "--version"], ["gcc", "--version"], ["cc", "--version"]]
