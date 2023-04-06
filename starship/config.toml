@@ -1,12 +1,17 @@
 [status]
 disabled = false
 pipestatus = true
+pipestatus_format = '\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int]($style) ' # デフォルトの最後に空白を入れただけ
 symbol = "×"
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold green)"
-vicmd_symbol = "[❮](bold green)"
+format = '$symbol \$ '
+success_symbol = "[ INS ](fg:black bg:cyan)"
+error_symbol = "[ INS ](fg:black bg:cyan)"
+vimcmd_symbol = "[ NOR ](fg:black bg:blue)"
+vimcmd_replace_one_symbol = "[ REP ](fg:black bg:red)"
+vimcmd_replace_symbol = "[ REP ](fg:black bg:red)"
+vimcmd_visual_symbol = "[ SEL ](fg:black bg:purple)"
 
 [c]
 commands = [["clang", "--version"], ["gcc", "--version"], ["cc", "--version"]]
