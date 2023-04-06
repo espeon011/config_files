@@ -1,7 +1,9 @@
-theme = "ayu_dark"
+theme = "tokyonight"
 
 [editor]
 cursorline = true
+color-modes = true
+bufferline = "multiple"
 
 [editor.indent-guides]
 render = true

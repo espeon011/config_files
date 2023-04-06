@@ -36,9 +36,9 @@ wezterm.on("format-tab-title",
 )
 
 return {
-  color_scheme = "Ayu Mirage",
+  color_scheme = "tokyonight_storm",
   font = wezterm.font "SF Mono Square",
-  font_size = 20,
+  font_size = 19,
 
   use_fancy_tab_bar = false,
 
