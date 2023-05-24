@@ -1,10 +1,12 @@
-theme = "tokyonight"
+theme = "catppuccin_mocha"
 
 [editor]
 cursorline = true
 color-modes = true
 bufferline = "multiple"
 
+[editor.statusline]
+right = ["diagnostics", "version-control", "selections", "position", "file-encoding"]
+
 [editor.indent-guides]
 render = true
-character = "╎"
