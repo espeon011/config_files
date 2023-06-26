@@ -6,25 +6,16 @@ set -gx COLORTERM "truecolor"
 switch (uname)
 case Darwin
     eval (/opt/homebrew/bin/brew shellenv)
-    set -gx LD_LIBRARY_PATH "/opt/homebrew/lib" $LD_LIBRARY_PATH
-    # llvm
-    fish_add_path --path "/opt/homebrew/opt/llvm/bin"
-    set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
-    set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
-    set -gx LIBCLANG_PATH "/opt/homebrew/opt/llvm/lib"
-    # uutils-coreutils
-    fish_add_path --path "/opt/homebrew/opt/uutils-coreutils/libexec/uubin"
 case Linux
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    set -gx LD_LIBRARY_PATH "/home/linuxbrew/.linuxbrew/lib" $LD_LIBRARY_PATH
-    # llvm
-    fish_add_path --path "/home/linuxbrew/.linuxbrew/opt/llvm/bin"
-    set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/llvm/lib"
-    set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/llvm/include"
-    set -gx LIBCLANG_PATH "/home/linuxbrew/.linuxbrew/opt/llvm/lib"
-    # uutils-coreutils
-    fish_add_path --path "/home/linuxbrew/.linuxbrew/opt/uutils-coreutils/libexec/uubin"
 end
+## llvm
+fish_add_path --path "$HOMEBREW_PREFIX/opt/llvm/bin"
+set -gx LDFLAGS "-L$HOMEBREW_PREFIX/opt/llvm/lib"
+set -gx CPPFLAGS "-I$HOMEBREW_PREFIX/opt/llvm/include"
+set -gx LIBCLANG_PATH "$HOMEBREW_PREFIX/opt/llvm/lib"
+## uutils-coreutils
+fish_add_path --path "$HOMEBREW_PREFIX/opt/uutils-coreutils/libexec/uubin"
 
 # cargo
 fish_add_path --path "$HOME/.cargo/bin"
