@@ -9,6 +9,7 @@ case Darwin
 case Linux
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
+set -gx LD_LIBRARY_PATH "$HOMEBREW_PREFIX/lib" $LD_LIBRARY_PATH
 ## llvm
 fish_add_path --path "$HOMEBREW_PREFIX/opt/llvm/bin"
 set -gx LDFLAGS "-L$HOMEBREW_PREFIX/opt/llvm/lib"
