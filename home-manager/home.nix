@@ -34,33 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-
-    pkgs.helix
-    pkgs.git
-    pkgs.exa
-    pkgs.erdtree
-    pkgs.bat
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.tmux
-    pkgs.zellij
-    pkgs.starship
-    pkgs.bottom
-    pkgs.procs
-    pkgs.amdgpu_top
-    pkgs.hexyl
-    pkgs.jaq
-    pkgs.jless
-    pkgs.typst
-    pkgs.neofetch
-    pkgs.onefetch
-    pkgs.asciiquarium
-
-    pkgs.wezterm
-    pkgs.mplus-outline-fonts.githubRelease
-    pkgs.vscode
-    pkgs.blender-hip
-    pkgs.microsoft-edge
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -92,21 +65,11 @@
     # EDITOR = "emacs";
     LANG = "ja_JP.UTF-8";
     COLORTERM = "truecolor";
-    EDITOR = "hx";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # User specific configurations.
-  programs = {
-    exa = import ./pkgs/exa;
-    git = import ./pkgs/git;
-    fish = import ./pkgs/fish;
-    starship = import ./pkgs/starship;
-    helix = import ./pkgs/helix;
-    tmux = import ./pkgs/tmux;
-    zellij = import ./pkgs/zellij;
-    wezterm = import ./pkgs/wezterm;
-  };
+  imports = [ ./pkgs ];
 }

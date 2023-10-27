@@ -13,7 +13,7 @@
   outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      # pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations."<your username>" = home-manager.lib.homeManagerConfiguration {
         # inherit pkgs;
