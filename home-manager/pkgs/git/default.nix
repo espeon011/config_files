@@ -1,8 +1,8 @@
 {...}: {
   programs.git = {
     enable = true;
-    userName = "psiana011";
-    userEmail = "psiana011.endo@gmail.com";
+    userName = "<your username>";
+    userEmail = "<your email>";
     delta.enable = true;
     # difftastic.enable = true;
     extraConfig = {
