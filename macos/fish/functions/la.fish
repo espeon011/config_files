@@ -1,3 +1,3 @@
 function la
-    exa --all --long --header --icons $argv
+    eza --all --icons $argv
 end
