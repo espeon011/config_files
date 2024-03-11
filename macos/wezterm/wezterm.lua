@@ -36,11 +36,26 @@ wezterm.on("format-tab-title",
 )
 
 return {
-  color_scheme = "Catppuccin Macchiato",
-  font = wezterm.font "SF Mono Square",
-  font_size = 20,
+  -- color_scheme = "Ayu Mirage (Gogh)",
+  -- color_scheme = "Ayu Mirage",
+  -- color_scheme = "Ayu Dark (Gogh)",
+  color_scheme = "Catppuccin Mocha",
+  -- color_scheme = "Catppuccin Mocha (Gogh)",
+
+  -- font = wezterm.font "SF Mono Square",
+  -- font_size = 20,
+
+  font = wezterm.font "Moralerspace Argon HWNF",
+  font_size = 18,
+
+  -- font = wezterm.font_with_fallback { "SF Mono", "Hiragino Sans" },
+  -- font_size = 16,
 
   use_fancy_tab_bar = false,
+
+  window_background_opacity = 0.75,
+  text_background_opacity = 0.75,
+  macos_window_background_blur = 20,
 
   keys = {
     {
