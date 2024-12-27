@@ -1,0 +1,21 @@
+quit-after-last-window-closed = true
+
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+font-family = "Moralerspace Argon HWNF"
+font-size = 16
+
+shell-integration-features = no-cursor
+cursor-opacity = 0.5
+
+# theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = catppuccin-mocha
+background-opacity = 0.8
+background-blur-radius = 20
+
+window-padding-x = 6
+window-padding-y = 4
+window-padding-balance = true
+
+config-file = "./keybinding"
