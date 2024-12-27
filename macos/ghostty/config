@@ -6,6 +6,11 @@ macos-option-as-alt = true
 font-family = "Moralerspace Argon HWNF"
 font-size = 16
 
+# Disable font ligature
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
 shell-integration-features = no-cursor
 cursor-opacity = 0.5
 
