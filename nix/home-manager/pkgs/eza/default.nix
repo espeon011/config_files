@@ -1,9 +1,9 @@
-{...}: {
+{ ... }: {
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    # enableAliases = true;
     git = true;
-    icons = true;
+    icons = "auto";
     extraOptions = [
       "--header"
     ];

@@ -35,46 +35,33 @@ wezterm.on("format-tab-title",
   end
 )
 
-local font_with_fallback = wezterm.font_with_fallback {
-  {
-    family = 'M PLUS Code Latin 60',
-    weight = 'Regular',
-    italic = false,
-  },
-  {
-    family = 'M PLUS 1',
-    weight = 'Regular',
-    italic = false,
-  }
-}
-
 return {
+  front_end = "OpenGL",
   -- front_end = "WebGpu",
+  -- front_end = "Software",
 
-  color_scheme = "kanagawabones",
-  -- color_scheme = "Catppuccin Mocha",
+  -- color_scheme = "kanagawabones",
+  color_scheme = "Catppuccin Mocha",
   -- color_scheme = "Catppuccin Frappe",
   -- font = wezterm.font "SF Mono Square",
-  -- font_size = 19,
-  font_rules = {
-    {
-      intensity = 'Half',
-      font = font_with_fallback,
-    },
-    {
-      intensity = 'Normal',
-      font = font_with_fallback,
-    },
-    {
-      intensity = 'Bold',
-      font = font_with_fallback,
-    },
-  },
-  font_size = 14,
+  font = wezterm.font_with_fallback { "M PLUS Code Latin 60", "M PLUS 1" },
+  font_size = 12,
 
   use_fancy_tab_bar = false,
+  window_background_opacity = 0.9,
+  text_background_opacity = 0.9,
 
   keys = {
+    {
+      key = 'd',
+      mods = "ALT",
+      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {
+      key = 'd',
+      mods = "ALT|SHIFT",
+      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
     {
       key = 'h',
       mods = "CTRL|SHIFT",

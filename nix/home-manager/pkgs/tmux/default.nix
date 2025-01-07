@@ -9,6 +9,7 @@
     mouse = true;
     terminal = "tmux-256color";
     extraConfig = ''
+      set-option -g default-terminal "tmux-256color"
       set-option -g terminal-overrides ",$TERM:Tc"
       set-option -g renumber-windows on
 

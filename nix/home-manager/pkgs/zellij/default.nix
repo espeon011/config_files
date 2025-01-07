@@ -1,8 +1,8 @@
-{...}: {
-  programs.zellij ={
+{ ... }: {
+  programs.zellij = {
     enable = true;
     settings = {
-      theme = "kanagawa";
+      theme = "catppuccin-mocha";
       simplified_ui = true;
       ui.pane_frames.rounded_corners = true;
       keybinds = {

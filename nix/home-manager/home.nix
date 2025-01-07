@@ -1,10 +1,7 @@
-{ config, pkgs, ... }:
-
-{
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "<your username>";
-  home.homeDirectory = "/home/<your username>";
+{ ... }: {
+  # Home Manager needs a bit of information about you and the paths it should manage.
+  home.username = (import ./user.nix).name;
+  home.homeDirectory = (import ./user.nix).directory;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -58,11 +55,10 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/<your username>/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
     LANG = "ja_JP.UTF-8";
     COLORTERM = "truecolor";
   };

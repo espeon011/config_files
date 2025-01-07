@@ -1,10 +1,10 @@
-{...}: {
+{ ... }: {
+  imports = [ ./user.nix ];
+
   programs.git = {
     enable = true;
-    userName = "<your username>";
-    userEmail = "<your email>";
-    delta.enable = true;
-    # difftastic.enable = true;
+    # delta.enable = true;
+    difftastic.enable = true;
     extraConfig = {
       core = {
         editor = "hx";
