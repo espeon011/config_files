@@ -7,16 +7,18 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix # Include the results of the hardware scan.
+      ./host.nix
       ./user.nix
+      ./docker.nix
+      ./font.nix
+      ./i18n.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "alhaitham"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -25,53 +27,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Tokyo";
-
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "ja_JP.UTF-8";
-
-    extraLocaleSettings = {
-      LC_ADDRESS = "ja_JP.UTF-8";
-      LC_IDENTIFICATION = "ja_JP.UTF-8";
-      LC_MEASUREMENT = "ja_JP.UTF-8";
-      LC_MONETARY = "ja_JP.UTF-8";
-      LC_NAME = "ja_JP.UTF-8";
-      LC_NUMERIC = "ja_JP.UTF-8";
-      LC_PAPER = "ja_JP.UTF-8";
-      LC_TELEPHONE = "ja_JP.UTF-8";
-      LC_TIME = "ja_JP.UTF-8";
-    };
-
-    inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5 = {
-        waylandFrontend = true;
-        addons = [ pkgs.fcitx5-mozc ];
-      };
-    };
-  };
-
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-emoji
-      nerdfonts
-    ];
-    fontDir.enable = true;
-    fontconfig = {
-      defaultFonts = {
-        serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-        sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-        monospace = [ "JetBrainsMono NerdFont" "Noto Color Emoji" ];
-        emoji = [ "Noto Color Emoji" ];
-      };
-    };
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -83,13 +38,6 @@
     variant = "";
   };
 
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.displayManager.gdm.autoSuspend = false;
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.displayManager.sddm.wayland.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {
     sddm.enable = true;
@@ -100,6 +48,7 @@
     plasma6.enable = true;
   };
 
+  programs.xwayland.enable = true;
   services.xrdp = {
     enable = true;
     defaultWindowManager = "startplasma-x11";
@@ -222,20 +171,5 @@
       # rocm-opencl-runtime
     ];
     # extraPackages32 = with pkgs; [];
-  };
-
-  programs = {
-    xwayland = {
-      enable = true;
-    };
-    # turbovnc = {
-    #   ensureHeadlessSoftwareOpenGL = true;
-    # };
-  };
-
-  # Rootless docker
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
   };
 }
