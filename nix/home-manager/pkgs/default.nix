@@ -15,7 +15,6 @@
     pkgs.nh
     pkgs.nil
     pkgs.nixpkgs-fmt
-    pkgs.erdtree
     pkgs.bat
     pkgs.mdcat
     pkgs.tailspin
