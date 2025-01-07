@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./user.nix
     ];
@@ -131,35 +132,14 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users = {
-  #   psiana011 = {
-  #     isNormalUser = true;
-  #     description = "psiana011";
-  #     extraGroups = [ "networkmanager" "wheel" "video" "render" "vglusers" ];
-  #     # packages = with pkgs; [];
-
-  #     # デフォルトシェルは bash のままにして interactive shell を fish にするべきかもしれない
-  #     # see: https://nixos.wiki/wiki/Fish#Setting%20fish%20as%20your%20shell
-  #     shell = pkgs.fish;
-  #   };
-  #   fendo = {
-  #     isNormalUser = true;
-  #     description = "fendo";
-  #     extraGroups = [ "video" "render" "vglusers" ];
-  #     # packages = with pkgs; [];
-  #     shell = pkgs.zsh;
-  #   };
-  # };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     tailscale
 
     clinfo # for GPU
@@ -208,7 +188,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
     };
     gc = {
       automatic = true;

@@ -36,20 +36,10 @@ wezterm.on("format-tab-title",
 )
 
 return {
-  -- color_scheme = "Ayu Mirage (Gogh)",
-  -- color_scheme = "Ayu Mirage",
-  -- color_scheme = "Ayu Dark (Gogh)",
   color_scheme = "Catppuccin Mocha",
-  -- color_scheme = "Catppuccin Mocha (Gogh)",
-
-  -- font = wezterm.font "SF Mono Square",
-  -- font_size = 20,
 
   font = wezterm.font "Moralerspace Argon HWNF",
-  font_size = 18,
-
-  -- font = wezterm.font_with_fallback { "SF Mono", "Hiragino Sans" },
-  -- font_size = 16,
+  font_size = 16,
 
   use_fancy_tab_bar = false,
 
@@ -58,6 +48,16 @@ return {
   macos_window_background_blur = 20,
 
   keys = {
+    {
+      key = 'd',
+      mods = "CMD",
+      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {
+      key = 'd',
+      mods = "CMD|SHIFT",
+      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
     {
       key = 'h',
       mods = "CTRL|SHIFT",
