@@ -32,11 +32,10 @@
     pkgs.jq
     pkgs.jaq
     pkgs.jless
-    # pkgs.typst
-    # pkgs.tinymist
     pkgs.fastfetch
     pkgs.onefetch
     pkgs.asciiquarium
+    pkgs.codesnap
 
     pkgs.mplus-outline-fonts.githubRelease
     pkgs.vscode
