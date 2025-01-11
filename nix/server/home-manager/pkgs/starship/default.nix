@@ -1,6 +1,7 @@
 { ... }: {
   programs.starship = {
     enable = true;
+    enableBashIntegration = false; # bash 起動時は starship を off にする
 
     settings = {
       status = {
