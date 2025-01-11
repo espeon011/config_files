@@ -1,10 +1,6 @@
 # nixpkgs にない catppuccin テーマを fish に設定するためのもの
 # see: https://www.reddit.com/r/NixOS/comments/18xgvqf/how_to_set_catppuccin_theme_for_fish_using/
-# 
-# 今の所テーマファイルを配置するだけ. 
-# カラーテーマの変更は `fish_config theme save "<テーマ名>"` で行う. 
-# これにより fish_variables.fish に変数が記録されることでカラーテーマが切り替わるが, nix の管理外になってしまった. 
-# 最終的には nix の管理内でテーマも設定したい
+# このファイルではテーマファイルを配置するだけ. 
 
 { pkgs, ... }:
 let

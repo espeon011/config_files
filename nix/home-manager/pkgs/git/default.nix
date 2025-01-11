@@ -3,8 +3,8 @@
 
   programs.git = {
     enable = true;
-    # delta.enable = true;
-    difftastic.enable = true;
+    delta.enable = true;
+    # difftastic.enable = true;
     extraConfig = {
       core = {
         editor = "hx";
