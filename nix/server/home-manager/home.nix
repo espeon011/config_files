@@ -60,7 +60,6 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     LANG = "ja_JP.UTF-8";
-    COLORTERM = "truecolor";
   };
 
   # Let Home Manager install and manage itself.
