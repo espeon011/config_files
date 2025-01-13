@@ -7,8 +7,8 @@ let
     hash = "sha256-HegD89d0HUJ7dHKWPkiJCIApPY/yqgYusn7e1LDYS6c=";
   };
 
-  pwd-command = "#{@catppuccin_directory_icon}#(sed -e 's|$HOME|~|' <(${pkgs.uutils-coreutils}/bin/uutils-echo #{pane_current_path}))";
-  git-branch-command = "#{?#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --git-dir > /dev/null 2>&1; ${pkgs.uutils-coreutils}/bin/uutils-echo $?),, (#{@catppuccin_gitmux_icon}#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD))}";
+  pwd-command = "#{@catppuccin_directory_icon}#(${pkgs.uutils-coreutils}/bin/uutils-echo #{pane_current_path} | ${pkgs.sd}/bin/sd \"^$HOME\" '~')";
+  git-branch-command = "#{?#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --git-dir >/dev/null 2>&1; ${pkgs.uutils-coreutils}/bin/uutils-echo $?),, (#{@catppuccin_gitmux_icon}#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD))}";
 in
 {
   programs.tmux = {
@@ -40,7 +40,7 @@ in
       set -g @catppuccin_flavor "frappe" # latte, frappe, macchiato or mocha
       set -g @catppuccin_window_status_style "basic"
       set -g @catppuccin_status_left_separator "█"
-      set -g @catppuccin_status_right_separator "█ "
+      set -g @catppuccin_status_right_separator "█"
       set -g @catppuccin_status_connect_separator "no"
 
       set -g @catppuccin_window_current_text " #{pane_current_command}"
@@ -50,15 +50,14 @@ in
       set -g @catppuccin_session_text " #S"
 
       set -g status-left-length 100
-      set -g status-left "#{E:@catppuccin_status_session}"
+      set -g status-left "#{E:@catppuccin_status_session} "
 
       set -g status-right-length 100
       set -g status-right ""
       set -ga status-right "#{E:@catppuccin_status_user}"
-      set -ga status-right "#{E:@catppuccin_status_host}"
+      set -ga status-right " #{E:@catppuccin_status_host}"
 
       set -g pane-border-status bottom
-      # set -g @catppuccin_pane_status_enabled "yes"
       set -g @catppuccin_pane_border_status "yes"
       set -g @catppuccin_pane_border_style "fg=colour238" # デフォルトだと明るすぎる
       set -g pane-border-format " #{pane_index}: ${pwd-command}${git-branch-command} "
