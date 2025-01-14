@@ -59,7 +59,7 @@ in
 
       set -g pane-border-status bottom
       set -g @catppuccin_pane_border_status "yes"
-      set -g @catppuccin_pane_border_style "fg=colour238" # デフォルトだと明るすぎる
+      set -g @catppuccin_pane_border_style "fg=#{E:@thm_surface_1}" # デフォルトだと明るすぎる
       set -g pane-border-format " #{pane_index}: ${pwd-command}${git-branch-command} "
 
       run ${tmux-catppuccin}/catppuccin.tmux
