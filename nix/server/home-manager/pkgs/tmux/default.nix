@@ -7,8 +7,8 @@ let
     hash = "sha256-HegD89d0HUJ7dHKWPkiJCIApPY/yqgYusn7e1LDYS6c=";
   };
 
-  pwd-command = "#{@catppuccin_directory_icon}#(${pkgs.uutils-coreutils}/bin/uutils-echo #{pane_current_path} | ${pkgs.sd}/bin/sd \"^$HOME\" '~')";
-  git-branch-command = "#{?#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --git-dir >/dev/null 2>&1; ${pkgs.uutils-coreutils}/bin/uutils-echo $?),, (#{@catppuccin_gitmux_icon}#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD))}";
+  pwd-command = " #(${pkgs.uutils-coreutils}/bin/uutils-echo #{pane_current_path} | ${pkgs.sd}/bin/sd \"^$HOME\" '~')";
+  git-branch-command = "#{?#(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --git-dir >/dev/null 2>&1; ${pkgs.uutils-coreutils}/bin/uutils-echo $?),, ( #(cd #{pane_current_path}; ${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD))}";
 in
 {
   programs.tmux = {
@@ -37,7 +37,7 @@ in
       bind -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send-keys -X begin-selection
       bind -T copy-mode-vi y   send-keys -X copy-pipe-and-cancel "pbcopy"
 
-      set -g @catppuccin_flavor "frappe" # latte, frappe, macchiato or mocha
+      set -g @catppuccin_flavor "mocha" # latte, frappe, macchiato or mocha
       set -g @catppuccin_window_status_style "basic"
       set -g @catppuccin_status_left_separator "█"
       set -g @catppuccin_status_right_separator "█"
