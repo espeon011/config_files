@@ -4,9 +4,18 @@ theme = "catppuccin_mocha"
 cursorline = true
 color-modes = true
 bufferline = "multiple"
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
 
 [editor.statusline]
 right = ["diagnostics", "version-control", "selections", "position", "file-encoding"]
 
 [editor.indent-guides]
 render = true
+
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
