@@ -34,12 +34,10 @@
     pkgs.jless
     pkgs.fastfetch
     pkgs.onefetch
-    pkgs.asciiquarium
     pkgs.codesnap
 
     pkgs.mplus-outline-fonts.githubRelease
     pkgs.vscode
-    pkgs.blender-hip
     pkgs.spacedrive
   ];
 }

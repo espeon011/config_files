@@ -35,7 +35,6 @@
       ];
 
       window-theme = "ghostty";
-      # window-theme = "dark";
     };
   };
 }
