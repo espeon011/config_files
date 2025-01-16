@@ -41,7 +41,6 @@ return {
   -- front_end = "Software",
 
   color_scheme = "Catppuccin Mocha",
-  -- color_scheme = "Catppuccin Frappe",
   font = wezterm.font_with_fallback { "M PLUS Code Latin 60", "M PLUS 1" },
   font_size = 12,
 
