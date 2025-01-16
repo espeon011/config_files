@@ -16,7 +16,6 @@
     pkgs.nil
     pkgs.nixpkgs-fmt
     pkgs.bat
-    pkgs.mdcat
     pkgs.tailspin
     pkgs.ripgrep
     pkgs.fd
