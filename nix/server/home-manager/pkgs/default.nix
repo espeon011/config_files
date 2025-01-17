@@ -28,8 +28,10 @@
     pkgs.hexyl
     pkgs.heh
     pkgs.csvlens
-    pkgs.jq
     pkgs.jaq
+    (pkgs.writeShellScriptBin "jq" ''
+      ${pkgs.jaq}/bin/jaq "$@"
+    '')
     pkgs.jless
     pkgs.fastfetch
     pkgs.onefetch
