@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./eza
+    ./jaq
     ./git
     ./fish
     ./starship
@@ -28,10 +29,6 @@
     pkgs.hexyl
     pkgs.heh
     pkgs.csvlens
-    pkgs.jaq
-    (pkgs.writeShellScriptBin "jq" ''
-      ${pkgs.jaq}/bin/jaq "$@"
-    '')
     pkgs.jless
     pkgs.fastfetch
     pkgs.onefetch
