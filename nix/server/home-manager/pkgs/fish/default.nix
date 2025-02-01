@@ -1,9 +1,10 @@
-{ pkgs, ... }:
-let
-  theme = if builtins.pathExists ./catppuccin.nix then "Catppuccin Mocha" else "fish default";
-in
-{
-  imports = [ ./catppuccin.nix ];
+{pkgs, ...}: let
+  theme =
+    if builtins.pathExists ./catppuccin.nix
+    then "Catppuccin Mocha"
+    else "fish default";
+in {
+  imports = [./catppuccin.nix];
 
   programs.fish = {
     enable = true;
@@ -14,7 +15,10 @@ in
     ";
 
     plugins = [
-      { name = "plugin-git"; src = pkgs.fishPlugins.plugin-git.src; }
+      {
+        name = "plugin-git";
+        src = pkgs.fishPlugins.plugin-git.src;
+      }
 
       ## 最終的には starship をやめて hydro に置き換えたい
       ## そのために starship でどのような機能があったかを確認しておこう

@@ -6,17 +6,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, flake-programs-sqlite, ... }:
-    let
-      hostname = (import ./host.nix).networking.hostName;
-    in
-    {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          flake-programs-sqlite.nixosModules.programs-sqlite
-          ./configuration.nix
-        ];
-      };
+  outputs = {
+    nixpkgs,
+    flake-programs-sqlite,
+    ...
+  }: let
+    hostname = (import ./host.nix).networking.hostName;
+  in {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        flake-programs-sqlite.nixosModules.programs-sqlite
+        ./configuration.nix
+      ];
     };
+  };
 }

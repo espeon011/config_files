@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   tmux-catppuccin = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "tmux";
@@ -30,8 +29,7 @@ let
       echo "$2"
     fi
   '';
-in
-{
+in {
   programs.tmux = {
     enable = true;
     aggressiveResize = true;

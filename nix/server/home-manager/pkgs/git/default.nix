@@ -1,5 +1,5 @@
-{ ... }: {
-  imports = [ ./user.nix ];
+{...}: {
+  imports = [./user.nix];
 
   programs.git = {
     enable = true;

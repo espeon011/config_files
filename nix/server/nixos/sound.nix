@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   # xrdp の音声は pipewire には対応してないので pulseaudio を ON にする -> できなかった
   # hardware.pulseaudio.enable = true;
 

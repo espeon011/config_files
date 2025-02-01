@@ -1,7 +1,6 @@
 let
   name = "exampleuser";
-in
-{
+in {
   inherit name;
   directory = "/home/${name}";
 }

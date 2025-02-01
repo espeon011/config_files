@@ -1,20 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ pkgs, ... }: {
-  imports =
-    [
-      ./hardware-configuration.nix # Include the results of the hardware scan.
-      ./host.nix
-      ./user.nix
-      ./docker.nix
-      ./font.nix
-      ./i18n.nix
-      ./sound.nix
-      ./sleep.nix
-      ./tailscale.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./host.nix
+    ./user.nix
+    ./docker.nix
+    ./font.nix
+    ./i18n.nix
+    ./sound.nix
+    ./sleep.nix
+    ./tailscale.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -31,7 +29,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -108,7 +106,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
     };
     gc = {
       automatic = true;

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "ja_JP.UTF-8";
@@ -20,7 +20,7 @@
       type = "fcitx5";
       fcitx5 = {
         waylandFrontend = true;
-        addons = [ pkgs.fcitx5-mozc ];
+        addons = [pkgs.fcitx5-mozc];
       };
     };
   };

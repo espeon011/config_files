@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -29,7 +29,7 @@
           auto-format = true;
           formatter = {
             command = "nixpkgs-fmt";
-            args = [ ];
+            args = [];
           };
         }
         {
@@ -38,7 +38,7 @@
         }
         {
           name = "typst";
-          roots = [ "main.typ" ];
+          roots = ["main.typ"];
         }
       ];
       language-server = {

@@ -1,9 +1,7 @@
 # nixpkgs にない catppuccin テーマを fish に設定するためのもの
 # see: https://www.reddit.com/r/NixOS/comments/18xgvqf/how_to_set_catppuccin_theme_for_fish_using/
-# このファイルではテーマファイルを配置するだけ. 
-
-{ pkgs, ... }:
-let
+# このファイルではテーマファイルを配置するだけ.
+{pkgs, ...}: let
   catppuccin-fish = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "fish";
@@ -15,8 +13,7 @@ let
   filenameLatte = "Catppuccin Latte.theme";
   filenameMacchiato = "Catppuccin Macchiato.theme";
   filenameMocha = "Catppuccin Mocha.theme";
-in
-{
+in {
   xdg.configFile."fish/themes/${filenameFrappe}".source = "${catppuccin-fish}/themes/${filenameFrappe}";
   xdg.configFile."fish/themes/${filenameLatte}".source = "${catppuccin-fish}/themes/${filenameLatte}";
   xdg.configFile."fish/themes/${filenameMacchiato}".source = "${catppuccin-fish}/themes/${filenameMacchiato}";

@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   catppuccin-starship = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "starship";
     rev = "e99ba6b210c0739af2a18094024ca0bdf4bb3225";
     hash = "sha256-1w0TJdQP5lb9jCrCmhPlSexf0PkAlcz8GBDEsRjPRns=";
   };
-in
-{
+in {
   programs.starship = {
     enable = true;
     enableBashIntegration = false; # bash 起動時は starship を off にする

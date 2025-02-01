@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
       noto-fonts-cjk-sans
@@ -9,10 +9,10 @@
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-        sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-        monospace = [ "JetBrainsMono NerdFont" "Noto Color Emoji" ];
-        emoji = [ "Noto Color Emoji" ];
+        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
+        sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
+        monospace = ["JetBrainsMono NerdFont" "Noto Color Emoji"];
+        emoji = ["Noto Color Emoji"];
       };
     };
   };

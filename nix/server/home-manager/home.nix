@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = (import ./user.nix).name;
   home.homeDirectory = (import ./user.nix).directory;
@@ -66,5 +66,5 @@
   programs.home-manager.enable = true;
 
   # User specific configurations.
-  imports = [ ./pkgs ];
+  imports = [./pkgs];
 }
