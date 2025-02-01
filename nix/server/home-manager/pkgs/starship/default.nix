@@ -14,10 +14,22 @@ in {
       palette = "catppuccin_mocha";
 
       palettes = {
-        catppuccin_frappe = (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/frappe.toml")).palettes.catppuccin_frappe;
-        catppuccin_latte = (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/latte.toml")).palettes.catppuccin_latte;
-        catppuccin_macchiato = (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/macchiato.toml")).palettes.catppuccin_macchiato;
-        catppuccin_mocha = (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/mocha.toml")).palettes.catppuccin_mocha;
+        catppuccin_frappe =
+          (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/frappe.toml"))
+          .palettes
+          .catppuccin_frappe;
+        catppuccin_latte =
+          (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/latte.toml"))
+          .palettes
+          .catppuccin_latte;
+        catppuccin_macchiato =
+          (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/macchiato.toml"))
+          .palettes
+          .catppuccin_macchiato;
+        catppuccin_mocha =
+          (builtins.fromTOML (builtins.readFile "${catppuccin-starship}/themes/mocha.toml"))
+          .palettes
+          .catppuccin_mocha;
       };
 
       status = {

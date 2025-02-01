@@ -15,7 +15,7 @@
   home.packages = [
     pkgs.nh
     pkgs.nil
-    pkgs.nixpkgs-fmt
+    pkgs.alejandra
     pkgs.bat
     pkgs.tailspin
     pkgs.ripgrep
