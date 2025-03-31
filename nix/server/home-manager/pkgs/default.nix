@@ -7,7 +7,7 @@
     ./starship
     ./helix
     ./tmux
-    ./zellij
+    # ./zellij # ログイン時に起動してしまうのでオフ
     ./wezterm
     ./ghostty
   ];
@@ -15,9 +15,11 @@
   home.packages = [
     pkgs.nh
     pkgs.nil
+    # pkgs.nixd
+    pkgs.nurl
     pkgs.alejandra
     pkgs.bat
-    pkgs.tailspin
+    # pkgs.tailspin # エラーになるので一旦除外
     pkgs.ripgrep
     pkgs.fd
     pkgs.serie

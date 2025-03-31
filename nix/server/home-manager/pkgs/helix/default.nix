@@ -35,6 +35,16 @@
         {
           name = "python";
           auto-format = true;
+          language-servers = [
+            {
+              name = "ruff";
+              only-features = ["format" "code-action" "diagnostics"];
+            }
+            {
+              name = "pylsp";
+              except-features = ["format" "code-action" "diagnostics"];
+            }
+          ];
         }
         {
           name = "typst";
