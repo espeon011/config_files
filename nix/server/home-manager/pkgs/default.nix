@@ -28,6 +28,7 @@
     pkgs.bottom
     pkgs.procs
     pkgs.amdgpu_top
+    pkgs.nvtopPackages.amd
     pkgs.hexyl
     pkgs.heh
     pkgs.csvlens
@@ -35,9 +36,6 @@
     pkgs.fastfetch
     pkgs.onefetch
     pkgs.codesnap
-
-    pkgs.mplus-outline-fonts.githubRelease
     pkgs.vscode
-    pkgs.spacedrive
   ];
 }

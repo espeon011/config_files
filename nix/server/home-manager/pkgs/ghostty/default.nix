@@ -1,14 +1,19 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = [
+    pkgs.moralerspace-hwnf
+  ];
+
   programs.ghostty = {
     enable = true;
     settings = {
       theme = "catppuccin-mocha";
       background-opacity = 0.9;
 
-      font-family = [
-        "M PLUS Code Latin 60"
-        "M PLUS 1"
-      ];
+      # font-family = [
+      #   "M PLUS Code Latin 60"
+      #   "M PLUS 1"
+      # ];
+      font-family = "Moralerspace Argon HWNF";
       font-size = 12;
 
       # Disable font ligature
