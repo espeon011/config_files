@@ -10,6 +10,7 @@
     # ./zellij # ログイン時に起動してしまうのでオフ
     ./wezterm
     ./ghostty
+    ./television
   ];
 
   home.packages = [
@@ -23,7 +24,6 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.serie
-    pkgs.television
     pkgs.yazi
     pkgs.bottom
     pkgs.procs
