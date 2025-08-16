@@ -11,6 +11,7 @@
     ./wezterm
     ./ghostty
     ./television
+    ./yazi
   ];
 
   home.packages = [
@@ -24,7 +25,6 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.serie
-    pkgs.yazi
     pkgs.bottom
     pkgs.procs
     pkgs.amdgpu_top

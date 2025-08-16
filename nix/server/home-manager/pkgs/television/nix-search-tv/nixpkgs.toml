@@ -1,0 +1,10 @@
+[metadata]
+name = "nixpkgs"
+description = "A channel to select from nixpkgs, nur and home-manager configurations"
+requirements = ["nix-search-tv"]
+
+[source]
+command = "nix-search-tv print"
+
+[preview]
+command = "nix-search-tv preview {}"

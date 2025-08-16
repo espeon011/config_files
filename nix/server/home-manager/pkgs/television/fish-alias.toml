@@ -1,0 +1,8 @@
+[metadata]
+name = "fish-alias"
+description = "A channel to select from shell aliases"
+requirements = ["fish"]
+
+[source]
+command = "fish -c alias -i"
+output = "{split:' ':1..}"
