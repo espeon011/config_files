@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.moralerspace-hwnf
+    pkgs.moralerspace-hw
   ];
 
   programs.ghostty = {
@@ -13,7 +13,7 @@
       #   "M PLUS Code Latin 60"
       #   "M PLUS 1"
       # ];
-      font-family = "Moralerspace Argon HWNF";
+      font-family = "Moralerspace Argon HW";
       font-size = 12;
 
       # Disable font ligature
