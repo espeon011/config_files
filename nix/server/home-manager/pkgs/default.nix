@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./fonts
     ./eza
     ./jaq
     ./git
