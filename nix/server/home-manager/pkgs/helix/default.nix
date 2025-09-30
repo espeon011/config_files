@@ -75,7 +75,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";
+    # EDITOR = "hx";
     VISUAL = "hx";
     GIT_EDITOR = "hx";
     COLORTERM = "truecolor";

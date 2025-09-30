@@ -1,8 +1,10 @@
-{pkgs, ...}: {
-  home.packages = [
-    pkgs.nix-search-tv
-  ];
+{...}: {
+  programs.nix-search-tv = {
+    enable = true;
+    settings = {
+      update_interval = "24h0m0s";
+    };
+  };
 
   xdg.configFile."television/cable/nixpkgs.toml".source = ./nixpkgs.toml;
-  xdg.configFile."nix-search-tv/config.json".source = ./config.json;
 }
