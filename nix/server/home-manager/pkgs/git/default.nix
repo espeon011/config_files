@@ -3,9 +3,9 @@
 
   programs.git = {
     enable = true;
-    delta.enable = true;
+    # delta.enable = true;
     # difftastic.enable = true;
-    extraConfig = {
+    settings = {
       core = {
         editor = "hx";
         quotepath = false;
@@ -13,5 +13,9 @@
       };
       init.defaultBranch = "main";
     };
+  };
+
+  programs.delta = {
+    enable = true;
   };
 }
