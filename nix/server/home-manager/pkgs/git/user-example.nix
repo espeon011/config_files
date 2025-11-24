@@ -1,6 +1,4 @@
-{...}: {
-  programs.git.settings.user = {
-    name = "exampleuser";
-    email = "exampleuser@example.com";
-  };
+{
+  name = "exampleuser";
+  email = "exampleuser@example.com";
 }

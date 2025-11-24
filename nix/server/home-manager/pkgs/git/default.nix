@@ -1,11 +1,9 @@
 {...}: {
-  imports = [./user.nix];
-
   programs.git = {
     enable = true;
-    # delta.enable = true;
     # difftastic.enable = true;
     settings = {
+      user = import ./user.nix;
       core = {
         editor = "hx";
         quotepath = false;
@@ -17,5 +15,6 @@
 
   programs.delta = {
     enable = true;
+    enableGitIntegration = true;
   };
 }
