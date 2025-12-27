@@ -1,7 +1,8 @@
 set -gx LANG "ja_JP.UTF-8"
+fish_add_path --path $HOME/.local/bin
 
-# man on bat
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# less
+set -gx LESSHISTFILE -
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -11,8 +12,4 @@ if status is-interactive
 
     # theme
     yes | fish_config theme save "Catppuccin Mocha"
-
-    # starship
-    set -gx STARSHIP_CONFIG "$HOME/.config/starship/config.toml"
-    starship init fish | source
 end

@@ -38,7 +38,7 @@ wezterm.on("format-tab-title",
 return {
   color_scheme = "Catppuccin Mocha",
 
-  font = wezterm.font "Moralerspace Argon HWNF",
+  font = wezterm.font "Moralerspace Argon HW",
   font_size = 16,
 
   use_fancy_tab_bar = false,

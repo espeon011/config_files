@@ -3,7 +3,7 @@ quit-after-last-window-closed = true
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 
-font-family = "Moralerspace Argon HWNF"
+font-family = "Moralerspace Argon HW"
 font-size = 16
 
 # Disable font ligature
@@ -15,7 +15,7 @@ shell-integration-features = no-cursor
 cursor-opacity = 0.5
 
 # theme = dark:catppuccin-mocha,light:catppuccin-latte
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background-opacity = 0.8
 background-blur-radius = 20
 
@@ -23,4 +23,7 @@ window-padding-x = 6
 window-padding-y = 4
 window-padding-balance = true
 
-config-file = "./keybinding"
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
