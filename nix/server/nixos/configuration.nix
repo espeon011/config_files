@@ -12,6 +12,7 @@
     ./sound.nix
     ./sleep.nix
     ./tailscale.nix
+    ./sudo.nix
   ];
 
   # Bootloader.
@@ -47,7 +48,7 @@
     plasma6.enable = true;
   };
 
-  programs.xwayland.enable = true;
+  # programs.xwayland.enable = true;
   services.xrdp = {
     enable = true;
     defaultWindowManager = "startplasma-x11";
@@ -123,11 +124,10 @@
     enable = true;
     # driSupport = true;
     # driSupport32Bit = true;
-    # extraPackages = with pkgs; [ rocm-opencl-icd rocm-opencl-runtime amdvlk ];
-    # extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+    # extraPackages = with pkgs; [ rocm-opencl-icd rocm-opencl-runtime ];
+    # extraPackages32 = with pkgs; [];
     extraPackages = with pkgs; [
       rocmPackages.clr.icd
-      amdvlk
       # rocm-opencl-icd
       # rocm-opencl-runtime
     ];

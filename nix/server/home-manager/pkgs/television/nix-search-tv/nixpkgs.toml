@@ -7,4 +7,4 @@ requirements = ["nix-search-tv"]
 command = "nix-search-tv print"
 
 [preview]
-command = "nix-search-tv preview {}"
+command = "nix-search-tv preview \"{}\""

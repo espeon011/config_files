@@ -22,7 +22,8 @@
     pkgs.nurl
     pkgs.alejandra
     pkgs.bat
-    # pkgs.tailspin # エラーになるので一旦除外
+    pkgs.diffnav
+    pkgs.tailspin
     pkgs.ripgrep
     pkgs.fd
     pkgs.serie

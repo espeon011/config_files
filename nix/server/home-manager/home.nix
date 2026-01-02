@@ -66,5 +66,8 @@
   programs.home-manager.enable = true;
 
   # User specific configurations.
-  imports = [./pkgs];
+  imports = [
+    ./pkgs
+    ./hexaly
+  ];
 }
