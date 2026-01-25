@@ -8,7 +8,7 @@
     ./starship
     ./helix
     ./tmux
-    # ./zellij # ログイン時に起動してしまうのでオフ
+    ./zellij
     ./wezterm
     ./ghostty
     ./television
@@ -38,6 +38,6 @@
     pkgs.fastfetch
     pkgs.onefetch
     pkgs.codesnap
-    pkgs.vscode
+    # pkgs.vscode
   ];
 }

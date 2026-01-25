@@ -8,6 +8,7 @@
       editor = {
         color-modes = true;
         cursorline = true;
+        cursor-shape.insert = "bar";
         bufferline = "multiple";
         statusline.right = [
           "diagnostics"
@@ -75,8 +76,6 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "hx";
-    VISUAL = "hx";
     GIT_EDITOR = "hx";
     COLORTERM = "truecolor";
   };
