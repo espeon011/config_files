@@ -48,8 +48,14 @@
           name = "python";
           auto-format = true;
           language-servers = [
-            "ty"
-            "pyrefly"
+            {
+              name = "pyrefly";
+              except-features = ["rename-symbol"];
+            }
+            {
+              name = "ty";
+              only-features = ["rename-symbol"];
+            }
             "ruff"
           ];
         }
