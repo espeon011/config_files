@@ -11,5 +11,5 @@ if status is-interactive
     fish_vi_key_bindings
 
     # theme
-    yes | fish_config theme save "Catppuccin Mocha"
+    yes | fish_config theme choose "Catppuccin Mocha"
 end
