@@ -16,6 +16,8 @@
   ];
 
   home.packages = [
+    pkgs.uutils-coreutils
+    pkgs.uutils-coreutils-noprefix
     pkgs.nh
     pkgs.nil
     # pkgs.nixd
