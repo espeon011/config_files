@@ -2,7 +2,7 @@
 
 spawn-at-startup "fcitx5"
 // spawn-at-startup "eww" "open" "bar"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 // spawn-at-startup "nm-applet --indicator"
 
 input {
@@ -84,7 +84,7 @@ binds {
     Mod+D hotkey-overlay-title="Application Launcher: noctalia-shell" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia-shell" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
-    Mod+W hotkey-overlay-title="Open a Browser: zen" { spawn "zen"; }
+    Mod+W hotkey-overlay-title="Open a Browser: zen" { spawn "zen-beta"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.

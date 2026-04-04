@@ -6,7 +6,7 @@
   home.packages = [
     pkgs.niri
     pkgs.wl-clipboard
-    pkgs.swww
+    pkgs.awww
     pkgs.pavucontrol
     pkgs.font-awesome
     pkgs.networkmanagerapplet
