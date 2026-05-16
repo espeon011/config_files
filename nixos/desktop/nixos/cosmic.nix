@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   services = {
     displayManager = {
       cosmic-greeter.enable = true;
@@ -7,4 +7,7 @@
       cosmic.enable = true;
     };
   };
+  environment.systemPackages = [
+    pkgs.cosmic-icons
+  ];
 }

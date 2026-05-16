@@ -1,6 +1,7 @@
 let
   hostname = "examplehost";
-in {
+in
+{
   # Define your hostname.
   networking.hostName = "${hostname}";
 
