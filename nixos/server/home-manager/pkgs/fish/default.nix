@@ -3,7 +3,7 @@
     enable = true;
     shellInit = "set -x SHELL $(which fish)";
     interactiveShellInit = "
-      yes | fish_config theme choose catppuccin-mocha
+      yes | fish_config theme choose catppuccin-mocha --color-theme=dark
       fish_vi_key_bindings
     ";
 

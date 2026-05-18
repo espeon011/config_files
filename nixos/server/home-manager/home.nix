@@ -32,8 +32,8 @@
   # User specific configurations.
   imports = [
     ./pkgs
-    ./files
+    ./licenses
+    ./files.nix
     ./xdg-user-dirs.nix
-    ./hexaly
   ];
 }

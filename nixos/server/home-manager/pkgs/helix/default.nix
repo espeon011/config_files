@@ -60,14 +60,28 @@
           ];
         }
         {
+          name = "julia";
+          auto-format = true;
+          roots = ["Project.toml" "Manifest.toml"];
+        }
+        {
           name = "typst";
           roots = ["main.typ"];
+          auto-format = true;
+        }
+        {
+          name = "c";
           auto-format = true;
         }
       ];
       language-server = {
         rust-analyzer.config = {
           check.command = "clippy";
+        };
+        julia = {
+          command = "julia";
+          timeout = 60;
+          args = ["--startup-file=no" "--history-file=no" "--quiet" "--project" "-e" "using LanguageServer; runserver()"];
         };
         tinymist.config = {
           formatterMode = "typstyle";
