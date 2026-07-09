@@ -17,13 +17,13 @@
         home-manager.follows = "home-manager";
       };
     };
-    noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, zen-browser, noctalia-shell, ... }:
+  outputs = { nixpkgs, home-manager, zen-browser, noctalia, ... }:
     let
       system = "x86_64-linux";
       username = (import ./user.nix).name;
@@ -41,7 +41,7 @@
         # the path to your home.nix.
         modules = [
           zen-browser.homeModules.beta
-          noctalia-shell.homeModules.default
+          noctalia.homeModules.default
           ./home.nix
         ];
 

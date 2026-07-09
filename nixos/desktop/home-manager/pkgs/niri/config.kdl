@@ -34,6 +34,13 @@ input {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
+  match app-id="dev.noctalia.Noctalia.Settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
     draw-border-with-background false
@@ -99,9 +106,11 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+D hotkey-overlay-title="Application Launcher: noctalia-shell" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    // Mod+D hotkey-overlay-title="Application Launcher: noctalia" { spawn-sh "noctalia ipc call launcher toggle"; }
+    Mod+D hotkey-overlay-title="Application Launcher: noctalia" { spawn-sh "noctalia msg panel-toggle launcher"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia-shell" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "noctalia ipc call lockScreen lock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "noctalia msg session lock"; }
     Mod+W hotkey-overlay-title="Open a Browser: zen" { spawn "zen-beta"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -349,4 +358,4 @@ debug {
   honor-xdg-activation-with-invalid-serial
 }
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
