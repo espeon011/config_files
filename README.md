@@ -13,6 +13,7 @@
 ## Shell
 
 - fish-shell
+- git bash (Windows)
 
 ## Editor
 
