@@ -140,5 +140,5 @@ return {
   },
 
   -- default_prog = { "pwsh" },
-  default_prog = { "C:/Users/psian/scoop/apps/git/current/usr/bin/bash.exe", "--login" },
+  default_prog = { "C:/Users/psian/scoop/apps/git/current/bin/bash.exe", "--login" },
 }
