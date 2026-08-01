@@ -1,0 +1,17 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc 
+  lalt ralt
+)
+
+(deflayer default
+  @lalt @ralt
+)
+
+(defalias
+  ;; 22 = VK_IME_ON (0x16), 26 = VK_IME_OFF (0x1A)
+  lalt (tap-hold-press 200 200 (arbitrary-code 26) lalt)  ;; 空打ちで IME オフ (英数)
+  ralt (tap-hold-press 200 200 (arbitrary-code 22) ralt)  ;; 空打ちで IME オン (かな)
+)

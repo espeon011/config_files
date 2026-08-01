@@ -1,0 +1,5 @@
+[opener]
+edit = [
+  { run = "%EDITOR% %*", block = true, for = "windows" },
+]
+

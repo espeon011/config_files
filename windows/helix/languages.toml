@@ -1,0 +1,12 @@
+[[language]]
+name = "bashrc"
+scope = "source.bash"
+injection-regex = "bashrc"
+file-types = [
+  { glob = "bashrc" },
+  { glob = "bash_profile" },
+]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+grammar = "bash"
+language-servers = ["bash-language-server"]

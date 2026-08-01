@@ -1,0 +1,11 @@
+keybinds {
+	unbind "Ctrl q"
+}
+simplified_ui true
+theme "catppuccin-mocha"
+ui {
+	pane_frames {
+		rounded_corners true
+	}
+}
+
