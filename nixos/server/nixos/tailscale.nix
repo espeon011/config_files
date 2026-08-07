@@ -1,3 +1,4 @@
+# See: https://wiki.nixos.org/wiki/Tailscale
 {config, ...}: {
   # 1. Enable the service and the firewall
   services.tailscale.enable = true;

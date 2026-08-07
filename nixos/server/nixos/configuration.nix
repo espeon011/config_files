@@ -78,10 +78,17 @@
     vulkan-tools # for GPU
     # rocmPackages.rocm-smi
 
-    vim
     firefox
     # turbovnc
   ];
+
+  # Default system editor
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

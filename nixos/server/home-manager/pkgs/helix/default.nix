@@ -47,17 +47,18 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = [
-            {
-              name = "pyrefly";
-              except-features = ["rename-symbol"];
-            }
-            {
-              name = "ty";
-              only-features = ["rename-symbol"];
-            }
-            "ruff"
-          ];
+          language-servers = ["ty" "ruff"];
+          # language-servers = [
+          #   {
+          #     name = "pyrefly";
+          #     except-features = ["rename-symbol"];
+          #   }
+          #   {
+          #     name = "ty";
+          #     only-features = ["rename-symbol"];
+          #   }
+          #   "ruff"
+          # ];
         }
         {
           name = "julia";
