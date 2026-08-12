@@ -13,6 +13,7 @@
     ./television
     ./yazi
     ./zen
+    ./claude-code
   ];
 
   # The home.packages option allows you to install Nix packages into your environment.
@@ -57,7 +58,7 @@
 
     # GUI App
     pkgs.mplus-outline-fonts.githubRelease
-    pkgs.firefox-devedition
+    # pkgs.firefox-devedition
     pkgs.thunderbird
     pkgs.zathura
     pkgs.zotero

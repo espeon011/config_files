@@ -104,6 +104,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
+      trusted-users = [ "root" "psiana011" ];
     };
     gc = {
       automatic = true;
