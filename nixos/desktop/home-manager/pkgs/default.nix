@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./fonts
     ./eza
     ./git
     ./fish
@@ -57,8 +58,6 @@
     pkgs.onefetch
 
     # GUI App
-    pkgs.mplus-outline-fonts.githubRelease
-    # pkgs.firefox-devedition
     pkgs.thunderbird
     pkgs.zathura
     pkgs.zotero
