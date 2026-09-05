@@ -47,7 +47,6 @@
     pkgs.tailspin
     pkgs.ripgrep
     pkgs.fd
-    pkgs.serie
     pkgs.bottom
     pkgs.procs
     pkgs.amdgpu_top
@@ -59,6 +58,5 @@
     pkgs.fastfetch
     pkgs.onefetch
     pkgs.codesnap
-    # pkgs.vscode
   ];
 }

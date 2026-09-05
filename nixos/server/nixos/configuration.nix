@@ -13,6 +13,7 @@
     ./sleep.nix
     ./tailscale.nix
     ./sudo.nix
+    ./avahi.nix
   ];
 
   # Bootloader.
