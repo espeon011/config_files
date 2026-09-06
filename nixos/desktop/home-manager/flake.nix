@@ -16,17 +16,9 @@
         home-manager.follows = "home-manager";
       };
     };
-    noctalia.url = "github:noctalia-dev/noctalia/cachix";
   };
 
-  nixConfig = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
-  };
-
-  outputs = { nixpkgs, home-manager, zen-browser, noctalia, ... }:
+  outputs = { nixpkgs, home-manager, zen-browser, ... }:
     let
       system = "x86_64-linux";
       username = (import ./user.nix).name;
@@ -43,7 +35,6 @@
         # the path to your home.nix.
         modules = [
           zen-browser.homeModules.beta
-          noctalia.homeModules.default
           ./home.nix
         ];
 

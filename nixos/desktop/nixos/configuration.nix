@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ./host.nix
@@ -13,11 +13,16 @@
     ./tailscale.nix
     ./sudo.nix
     ./niri.nix
+    ./avahi.nix
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
