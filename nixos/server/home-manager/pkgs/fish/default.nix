@@ -27,4 +27,8 @@
       fi
     '';
   };
+
+  imports = [
+    ./starship
+  ];
 }

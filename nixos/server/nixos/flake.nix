@@ -1,22 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    # flake-programs-sqlite = {
-    #   url = "github:wamserma/flake-programs-sqlite";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
-  outputs = {
-    nixpkgs,
-    # flake-programs-sqlite,
-    ...
-  }: let
+  outputs = inputs: let
     hostname = (import ./host.nix).networking.hostName;
   in {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
       modules = [
-        # flake-programs-sqlite.nixosModules.programs-sqlite
         ./configuration.nix
       ];
     };

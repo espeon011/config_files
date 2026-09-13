@@ -8,32 +8,30 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flyline = {
+      url = "github:HalFrgrd/flyline";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    ...
-  }: let
+  outputs = inputs: let
     system = "x86_64-linux";
     username = (import ./user.nix).name;
-    # pkgs = nixpkgs.legacyPackages.${system};
   in {
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      # inherit pkgs;
-      pkgs = import nixpkgs {
+    homeConfigurations.${username} = inputs.home-manager.lib.homeManagerConfiguration {
+      # pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
 
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
+      # Specify your home configuration modules here, for example, the path to your home.nix.
       modules = [
         ./home.nix
       ];
 
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+      # Optionally use extraSpecialArgs to pass through arguments to home.nix
+      extraSpecialArgs = {inherit inputs;};
     };
   };
 }

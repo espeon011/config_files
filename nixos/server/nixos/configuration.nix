@@ -1,7 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ./host.nix
@@ -91,7 +95,6 @@
     vimAlias = true;
   };
 
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -123,6 +126,9 @@
       dates = "weekly";
       options = "--delete-older-than 14d";
     };
+    channel.enable = false;
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    nixPath = ["nixpkgs=flake:nixpkgs"];
   };
 
   systemd.tmpfiles.rules = [

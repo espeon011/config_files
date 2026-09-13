@@ -5,7 +5,7 @@
     ./jaq
     ./git
     ./fish
-    ./starship
+    # ./bash
     ./helix
     ./tmux
     ./zellij

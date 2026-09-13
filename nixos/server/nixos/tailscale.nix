@@ -17,7 +17,7 @@
     "TS_DEBUG_FIREWALL_MODE=nftables"
   ];
 
-  # 3. Optimization: Prevent systemd from waiting for network online 
+  # 3. Optimization: Prevent systemd from waiting for network online
   # (Optional but recommended for faster boot with VPNs)
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
