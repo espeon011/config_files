@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ./host.nix
@@ -116,5 +116,8 @@
       dates = "weekly";
       options = "--delete-older-than 14d";
     };
+    channel.enable = false;
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    nixPath = ["nixpkgs=flake:nixpkgs"];
   };
 }
