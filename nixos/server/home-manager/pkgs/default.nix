@@ -4,8 +4,8 @@
     ./eza
     ./jaq
     ./git
-    ./fish
-    # ./bash
+    # ./fish
+    ./bash
     ./helix
     ./tmux
     ./zellij

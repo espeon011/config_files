@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flyline = {
-      url = "github:HalFrgrd/flyline";
+      url = "github:HalFrgrd/flyline?ref=refs/tags/v1.9.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
