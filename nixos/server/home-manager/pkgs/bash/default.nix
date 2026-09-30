@@ -14,7 +14,7 @@ in {
     initExtra = ''
       enable -f ${libflyline} flyline
       flyline create-prompt-widget last-command-duration
-      PS1='\e[01;32m\u@\h\e[00m : \e[01;34m\w\e[00m \n$ '
+      PS1='\e[01;32m\u@\h\e[00m : \e[01;34m\w\e[00m''${IN_NIX_SHELL:+ \e[01;36m❄  $IN_NIX_SHELL''${name:+ ($name)}\e[00m} \n$ '
       RPS1=' (took FLYLINE_LAST_COMMAND_DURATION) \e[01;33m\t\n\e[00m'
       PS1_FILL='-'
       PROMPT_RULER=' '
