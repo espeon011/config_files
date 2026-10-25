@@ -29,6 +29,10 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          # Zotero の内部ランタイムであるところの Firefox ESR 140 (2026-10-13 EOL) を許可
+          config.permittedInsecurePackages = [
+            "firefox-esr-140-bin-unwrapped-140.17.0esr"
+          ];
         };
 
         # Specify your home configuration modules here, for example,
